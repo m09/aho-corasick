@@ -1,5 +1,5 @@
-Aho-Corasick Search
-===================
+Aho-Corasick Search [![Build Status](https://travis-ci.org/m09/aho-corasick.svg?branch=master)](https://travis-ci.org/m09/aho-corasick)
+===
 
 This implementation supports generic alphabets. That's its only
 interest.
