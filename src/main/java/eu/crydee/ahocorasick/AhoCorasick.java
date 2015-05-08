@@ -121,20 +121,32 @@ public class AhoCorasick<T> {
     /**
      * Entry point of the library.
      *
-     * Performs the Aho-Corasick search on the text. Normal result is a multimap
-     * from text indeces marking the end of matches to indeces of matched
-     * patterns both indeces are calculated starting from 0.
-     *
-     * Reversed result is the reversed multimap (from patterns to end of match
-     * indeces).
+     * Performs the Aho-Corasick search on the text. The result is a multimap
+     * from matched patterns indices to text indices marking the end of matches.
+     * Both indices are calculated starting from 0.
      *
      * @param text the sequence of symbols to search.
-     * @param reversedResult if true, inverses the resulting map.
-     * @return return a map from indeces to patterns, can be reversed.
+     * @return a map of patterns indeces to text indices.
      */
-    public SetMultimap<Integer, Integer> search(
-            T[] text,
-            boolean reversedResult) {
+    public SetMultimap<Integer, Integer> searchPatternToPos(T[] text) {
+        return search(text, true);
+    }
+
+    /**
+     * Entry point of the library.
+     *
+     * Performs the Aho-Corasick search on the text. The result is a multimap
+     * from text indices marking the end of matches to indices of matched
+     * patterns. Both indices are calculated starting from 0.
+     *
+     * @param text the sequence of symbols to search.
+     * @return a map of text indices to patterns indices.
+     */
+    public SetMultimap<Integer, Integer> searchPosToPattern(T[] text) {
+        return search(text, false);
+    }
+
+    public SetMultimap<Integer, Integer> search(T[] text, boolean reversed) {
         SetMultimap<Integer, Integer> result = HashMultimap.create();
         State state = root;
         for (int i = 0, s = text.length; i < s; ++i) {
@@ -143,7 +155,7 @@ public class AhoCorasick<T> {
                 state = state.fail();
             }
             state = state.goTo(symbol);
-            if (!reversedResult) {
+            if (!reversed) {
                 result.putAll(i, state.getOutputs());
             } else {
                 for (Integer patternIndex : state.getOutputs()) {
