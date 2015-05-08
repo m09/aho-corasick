@@ -18,6 +18,10 @@ package eu.crydee.ahocorasick;
 import com.google.common.primitives.Ints;
 
 /**
+ * Simple immutable data class.
+ *
+ * Used as a triple to delimit occurrences in result sets of an Aho-Corasick
+ * search. Since it's immutable, the fields are accessible directly.
  *
  * @author m09
  */
