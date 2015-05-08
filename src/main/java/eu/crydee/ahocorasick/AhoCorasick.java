@@ -13,6 +13,11 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Generic Aho-Corasick search class.
+ *
+ * @param <T> type of the alphabet to use for your searches.
+ */
 public class AhoCorasick<T> {
 
     private class State {
