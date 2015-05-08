@@ -53,16 +53,20 @@ alphabet is the `Character` type and we want to be able to detect the
 patterns “hu”, “she” and “hers”, we can create the list of patterns as
 follows, using Java 8 functional idioms:
 
-    List<Character[]> patterns = Stream.of(
-            "hu",
-            "she",
-            "hers")
-            .map(s -> ArrayUtils.toObject(s.toCharArray()))
-            .collect(Collectors.toList());
+```java
+List<Character[]> patterns = Stream.of(
+        "hu",
+        "she",
+        "hers")
+        .map(s -> ArrayUtils.toObject(s.toCharArray()))
+        .collect(Collectors.toList());
+```
 
 Once we have the list of patterns we can create the search object:
 
-    AhoCorasick<Character> ac = new AhoCorasick<>(patterns);
+```java
+AhoCorasick<Character> ac = new AhoCorasick<>(patterns);
+```
 
 This builds the automaton required to efficiently search any text with
 all your patterns.
@@ -71,7 +75,9 @@ Now you have to prepare the texts you want to search on as arrays. For
 example, here, if we wanted to test the “hushers” text, we'd code
 (using Apache Commons Lang 3 to ease the arrays manipulation):
 
-    Character[] text = ArrayUtils.toObject("hushers".toCharArray());
+```java
+Character[] text = ArrayUtils.toObject("hushers".toCharArray());
+```
 
 You can now choose a search method to detect patterns in your
 text. The choice depends on your use-case:
@@ -92,9 +98,11 @@ can use the `AhoCorasickHelpers` class to produce a sorted set of
 occurrences are ordered by smallest `begin`, largest `end` and
 smallest `patternIndex`:
 
-    SortedSet<Occurrence> result
-            = AhoCorasickHelpers.toOccurrenceList(
-                    ac.searchPosToPattern(text),
-                    patterns,
-                    false);
-    // result is {(0, 1, 0), (2, 4, 1), (3, 6, 2)}
+```java
+SortedSet<Occurrence> result
+        = AhoCorasickHelpers.toOccurrenceList(
+                ac.searchPosToPattern(text),
+                patterns,
+                false);
+// result is {(0, 1, 0), (2, 4, 1), (3, 6, 2)}
+```
