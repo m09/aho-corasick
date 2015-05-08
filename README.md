@@ -33,14 +33,14 @@ section of your `pom.xml`:
     <dependency>
       <groupId>eu.crydee</groupId>
       <artifactId>aho-corasick</artifactId>
-      <version>1.0.0</version>
+      <version>2.0.0</version>
     </dependency>
 ```
 
 If you do not use maven, you can still [download][dl] the jar from
 Maven Central and use it as appropriate.
 
-[dl]: http://search.maven.org/remotecontent?filepath=eu/crydee/aho-corasick/1.0.0/aho-corasick-1.0.0.jar
+[dl]: http://search.maven.org/remotecontent?filepath=eu/crydee/aho-corasick/2.0.0/aho-corasick-2.0.0.jar
 
 Usage
 -----
