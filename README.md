@@ -1,5 +1,7 @@
 Aho-Corasick Search
 ===
+
+[![Join the chat at https://gitter.im/m09/aho-corasick](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/m09/aho-corasick?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/m09/aho-corasick.svg?branch=master)](https://travis-ci.org/m09/aho-corasick)
 [![Maven Central version](https://img.shields.io/maven-central/v/eu.crydee/aho-corasick.svg)](http://search.maven.org/#search|ga|1|a%3A%22aho-corasick%22) [![Coverage Status](https://coveralls.io/repos/m09/aho-corasick/badge.svg?branch=master)](https://coveralls.io/r/m09/aho-corasick?branch=master)
 
