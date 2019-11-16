@@ -25,13 +25,13 @@ With Maven, you can just add the following to the `dependencies` section of your
     <dependency>
       <groupId>eu.crydee</groupId>
       <artifactId>aho-corasick</artifactId>
-      <version>2.0.0</version>
+      <version>2.0.1</version>
     </dependency>
 ```
 
 If you do not use maven, you can still [download][dl] the jar from Maven Central and use it as appropriate.
 
-[dl]: http://search.maven.org/remotecontent?filepath=eu/crydee/aho-corasick/2.0.0/aho-corasick-2.0.0.jar
+[dl]: http://search.maven.org/remotecontent?filepath=eu/crydee/aho-corasick/2.0.1/aho-corasick-2.0.1.jar
 
 Usage
 -----
